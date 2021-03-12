@@ -16,23 +16,31 @@ import pickle
 # from lightgbm import LGBMClassifier
 import os 
 from eda_app import run_eda_app
-from ML_app import run_ML_app
+import h5py
+from tensorflow.keras.callbacks import ModelCheckpoint,CSVLogger
 
-def main():
-    st.title('당뇨병 예측 앱 개발')
-    #사이드바 메뉴
-    menu = ['Home','EDA','ML']
-    choice = st.sidebar.selectbox('MENU',menu)
 
-    if choice == 'Home':
-        st.write('이 앱은 고객데이터와 당뇨병 예측 데이터에 대한 내용 입니다. 해당 고객의 정보를 입력하면, 얼마정도의 차를 구매할 수 있는지를 예측하는 앱입니다.')
-        st.write('왼쪽의 사이드바에서 선택하세요.')
 
-    elif choice =='EDA':
-        run_eda_app()
+def run_ML_app():
+    st.subheader('Maching Learnig')
 
-    elif choice =='ML':
-        run_ML_app()
+    Pn = st.number_input("임신 횟수",min_value=0)
+    
+    Gc = st.number_input('포도당',min_value=0)
+
+    Bp = st.number_input('이완기 혈압',min_value=0)
+
+    stk = st.number_input('피부 주름 두께',min_value=0)
+
+    ins	= st.number_input("혈청 인슐린",min_value=0)
+    
+    BM = st.number_input('체중',min_value=0)
+
+    Dpe = st.number_input('당뇨병 혈통',min_value=0)
+
+    age = st.number_input('나이',min_value=0,max_value=120)
+
+
 
 
 
