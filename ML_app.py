@@ -21,14 +21,15 @@ import joblib
 
 
 
+
 def run_ML_app():
-   
+
    model = joblib.load('data/best_model.pkl')
    df = pd.read_csv('data/diabetes.csv')
    st.dataframe(df)
 
    new_data = np.array([3,88,58,11,54,24,0.26,22])
-   new_data - new_data.reshape(1,-1)
+   new_data = new_data.reshape(1,-1)
    print(new_data)
 
    st.write(model.predict(new_data))
