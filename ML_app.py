@@ -15,7 +15,6 @@ from sklearn.model_selection import GridSearchCV
 import pickle
 # from lightgbm import LGBMClassifier
 import os 
-from eda_app import run_eda_app
 import h5py
 from tensorflow.keras.callbacks import ModelCheckpoint,CSVLogger
 import joblib
@@ -50,3 +49,5 @@ def run_ML_app():
     # Dpe = st.number_input('당뇨병 혈통',min_value=0)
 
     # age = st.number_input('나이',min_value=0,max_value=120)
+
+
