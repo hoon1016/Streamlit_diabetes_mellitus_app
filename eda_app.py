@@ -63,6 +63,3 @@ def run_eda_app():
     max_data = df[choice].max() == df[choice]
     st.write('최대값 데이터')
     st.dataframe(df.loc[max_data,])
-
-if __name__ =='__main__':
-    main()
