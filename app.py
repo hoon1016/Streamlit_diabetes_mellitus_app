@@ -12,12 +12,11 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix,classification_report,accuracy_score
 from sklearn.model_selection import GridSearchCV
-import pickle
+import pickle 
 # from lightgbm import LGBMClassifier
 import os 
 from eda_app import run_eda_app
 from ML_app import run_ML_app
-
 def main():
     st.title('당뇨병 예측 앱 개발')
     #사이드바 메뉴
