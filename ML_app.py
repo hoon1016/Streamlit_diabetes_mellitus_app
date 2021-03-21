@@ -12,7 +12,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix,classification_report,accuracy_score
 from sklearn.model_selection import GridSearchCV
-import pickle
+import pickle 
 # from lightgbm import LGBMClassifier
 import os 
 import h5py
@@ -20,7 +20,9 @@ from tensorflow.keras.callbacks import ModelCheckpoint,CSVLogger
 import joblib
 
 
+
 def run_ML_app():
+   
    model = joblib.load('data/best_model.pkl')
    df = pd.read_csv('data/diabetes.csv')
    st.dataframe(df)
