@@ -26,8 +26,18 @@ def run_ML_app():
 
    model = joblib.load('data/best_model.pkl')
    df = pd.read_csv('data/diabetes.csv')
+   
    st.dataframe(df)
-
+   selected_columns = st.multiselect('컬럼을 선택하시오',columns)
+   
+   columns = df.columns
+   columns = list(columns)   
+   
+   if len(selected_columns) != 0 :
+      st.dataframe(df[selected_columns])
+   else:
+      st.write('선택한 컬럼이 없습니다')
+   
    new_data = np.array([3,88,58,11,54,24,0.26,22])
    new_data = new_data.reshape(1,-1)
    print(new_data)
